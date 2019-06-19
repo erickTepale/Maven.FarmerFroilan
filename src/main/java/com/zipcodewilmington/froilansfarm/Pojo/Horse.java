@@ -9,7 +9,6 @@ public class Horse extends Animal implements Rideable {
     public void eat(Edible edible) {
 
     }
-
     public String makenoise() {
         return null;
     }

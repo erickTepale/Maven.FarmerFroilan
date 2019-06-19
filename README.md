@@ -7,9 +7,9 @@
 # Setting the Plot...
 
 * Consider a system in which
-	* `Eater` can `eat` an `Edible` object.
+	* `com.zipcodewilmington.froilansfarm.Interfaces.Eater` can `eat` an `Edible` object.
 	* `NoiseMaker` can `makeNoise`
-	* `Animal` is a `NoiseMaker` and `Eater`
+	* `Animal` is a `NoiseMaker` and `com.zipcodewilmington.froilansfarm.Interfaces.Eater`
 		* `Horse` is an `Animal` and `Rideable`
 		* `Chicken` is an `Animal` and a `Produce` which `yield` an `EdibleEgg` if `hasBeenFertilized` flag is `false`.
 
@@ -31,7 +31,7 @@
 			* `TomatoPlant` is a `Crop` which can `yield` a `Tomato`
 
 	* `Person` can `makeNoise` and can `eat` an `Edible` object.
-	* `Farmer` is an `Eater`, a `Rider`, a `Botanist`, and a `Person`.
+	* `Farmer` is an `com.zipcodewilmington.froilansfarm.Interfaces.Eater`, a `Rider`, a `Botanist`, and a `Person`.
 	* `Stable` stores many `Horse`.
 	* `FarmHouse` stores many `Person`
 	* `ChickenCoop` stores many `Chicken`

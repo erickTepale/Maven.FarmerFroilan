@@ -9,5 +9,6 @@ public abstract class Crop implements Produce, Edible {
 
     public Edible yields(Storage storage) {
         return null;
+
     }
 }

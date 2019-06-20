@@ -9,7 +9,6 @@ public class Crop implements Produce, Edible {
     CornStalk cornStalk;
     TomatoPlant tomatoPlant;
 
-    public Edible yields(Storage storage) {
-        return null;
+    public void yields(Edible edible) {
     }
 }

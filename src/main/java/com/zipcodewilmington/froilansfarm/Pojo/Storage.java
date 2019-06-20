@@ -14,6 +14,12 @@ public class Storage<E extends Edible> {
     public void removeFood(E food) {
         storage.remove(food);
     }
+    public void removeFoodByIndex(Integer index) {
+
+        if (storage.size() > 0){
+            storage.remove(0);
+        }
+    }
 
     public E getFood() {
         if (storage.get(0) != null){
@@ -23,7 +29,7 @@ public class Storage<E extends Edible> {
     }
 
     public Integer count() {
-        return this.count();
+        return storage.size();
     }
 
 }

@@ -9,12 +9,12 @@ public class Stable {
     List<Horse> stable = new ArrayList<Horse>();
 
 
-    public void addHorse(Horse hores) {
-        this.stable.add(hores);
+    public void addHorse(Horse horse) {
+        this.stable.add(horse);
     }
 
-    public void removeHorse(Horse hores) {
-        this.stable.remove(hores);
+    public void removeHorse(Horse horse) {
+        this.stable.remove(horse);
     }
 
     public Integer horesCount() {

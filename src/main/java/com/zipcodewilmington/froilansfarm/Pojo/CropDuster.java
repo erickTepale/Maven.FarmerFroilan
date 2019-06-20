@@ -11,6 +11,7 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
 
 
 
+
     public CropDuster() {
         isFlying = false;
     }

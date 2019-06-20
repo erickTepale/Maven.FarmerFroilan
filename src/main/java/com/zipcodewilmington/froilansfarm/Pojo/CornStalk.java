@@ -8,7 +8,7 @@ public class CornStalk extends Crop {
     EarOfCorn earOfCorn;
 
     @Override
-    public Edible yields() {
+    public Edible yields(Storage storage) {
         return earOfCorn;
     }
 }

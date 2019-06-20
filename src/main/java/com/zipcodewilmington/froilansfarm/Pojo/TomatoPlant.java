@@ -7,7 +7,7 @@ public class TomatoPlant extends Crop {
 
 
     @Override
-    public Edible yields(Storage storage) {
-        return tomato;
+    public void yields(Edible edible) {
+
     }
 }

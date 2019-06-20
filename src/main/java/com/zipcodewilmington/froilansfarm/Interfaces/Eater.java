@@ -5,5 +5,5 @@ import com.zipcodewilmington.froilansfarm.Pojo.Storage;
 import java.util.List;
 
 public interface Eater {
-    void eat( Storage storage);
+    void eat( Edible edible);
 }

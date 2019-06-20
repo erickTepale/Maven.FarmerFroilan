@@ -6,7 +6,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 public class Pilot extends Person implements Rider {
 
-    public void eat(Storage storage) {
+    public void eat(Edible edible) {
 
     }
 

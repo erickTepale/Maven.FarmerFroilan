@@ -1,35 +1,61 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
-
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import java.util.HashMap;
+import java.util.Map;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class Storage<E extends Edible> {
-    private List<E> storage = new ArrayList<E>();
+public class Storage {
 
-    public void addFood(E food) {
-        storage.add(food);
+        private static Storage INSTANCE;
+        private String key;
+        private Map<String, Integer> conatiner;
+
+
+        public static Storage getInstance (){
+            if(INSTANCE == null){
+                INSTANCE = new Storage();
+            }
+            return INSTANCE;
+        }
+
+        private Storage(){
+            this.conatiner = new HashMap<String, Integer>();
+            this.conatiner.put("egg", 0);
+            this.conatiner.put("corn", 0);
+            this.conatiner.put("tomato", 0);
+
+        }
+
+    public void addEdible(Edible edible) {
+        setKey(edible);
+        conatiner.replace(key, conatiner.get(key) + 1 );
     }
-    public void removeFood(E food) {
-        storage.remove(food);
-    }
-    public void removeFoodByIndex(Integer index) {
 
-        if (storage.size() > 0){
-            storage.remove(0);
+    public void removeEdible(Edible edible) {
+       setKey(edible);
+       conatiner.replace(key, conatiner.get(key) - 1 );
+    }
+
+
+
+   public Integer count(Edible edible) {
+        setKey(edible);
+        return this.conatiner.get(key);
+    }
+
+    private void setKey(Edible edible) {
+        if (edible instanceof EdibleEgg) {
+            this.key = "egg";
+        } else if (edible instanceof EarOfCorn) {
+            this.key = "corn";
+        } else if (edible instanceof Tomato) {
+            this.key ="tomato";
         }
     }
 
-    public E getFood() {
-        if (storage.get(0) != null){
-        return storage.get(0);
-        }
-        return null;
+    public void resetConainter() {
+        conatiner.replace("egg",0);
+        conatiner.replace("corn",0);
+        conatiner.replace("tomato",0);
     }
-
-    public Integer count() {
-        return storage.size();
-    }
-
 }

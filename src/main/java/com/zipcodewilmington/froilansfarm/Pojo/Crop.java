@@ -7,8 +7,6 @@ public abstract class Crop implements Produce, Edible {
     Boolean hasBeenHavested;
     Boolean HasBeenFertilized;
 
-    public Edible yields(Storage storage) {
-        return null;
-
+    public void yields(Edible edible) {
     }
 }

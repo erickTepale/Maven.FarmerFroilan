@@ -16,6 +16,14 @@ public class TractorTest {
         assertEquals(expected, johnDeere.makenoise());
     }
 
+    @Test
+    public void engineNoise(){
+        Tractor tractor = new Tractor();
+        String expected = "vooRRRR, vooRRR, vooRRR";
+
+        assertEquals(expected, tractor.engineNoise());
+    }
+
     @org.junit.Test
     public void ride() {
         Tractor johnDeere = new Tractor();
@@ -47,7 +55,7 @@ public class TractorTest {
 
         assertFalse(johnDeere.getIsOn());
 
-        johnDeere.setIsOn(true);
+        johnDeere.turnOn();
 
         assertTrue(johnDeere.getIsOn());
     }
@@ -65,7 +73,7 @@ public class TractorTest {
 
         assertFalse(johnDeere.hasRider);
 
-        johnDeere.setHasRider(true);
+        johnDeere.mountVehicle();
 
         assertTrue(johnDeere.getHasRider());
 
@@ -77,7 +85,7 @@ public class TractorTest {
         Tractor johnDeere = new Tractor();
 
 
-        johnDeere.setHasRider(true);
+        johnDeere.mountVehicle();
 
         assertTrue(johnDeere.getHasRider());
     }
@@ -105,33 +113,33 @@ public class TractorTest {
         Tractor johnDeere = new Tractor();
         Rider thisRider = new Farmer();
 
-        assertNull(johnDeere.getDriver());
+        assertNull(johnDeere.getRider());
 
-        johnDeere.mountThis(thisRider);
+        johnDeere.addRider(thisRider);
 
-        assertEquals(thisRider, johnDeere.getDriver());
+        assertEquals(thisRider, johnDeere.getRider());
     }
 
     @Test
     public void getDriver() {
         Tractor johnDeere = new Tractor();
         Rider thisRider = new Farmer();
-        johnDeere.mountThis(thisRider);
+        johnDeere.addRider(thisRider);
 
-        assertEquals(thisRider, johnDeere.getDriver());
+        assertEquals(thisRider, johnDeere.getRider());
     }
 
     @Test
     public void getOffThis() {
         Tractor johnDeere = new Tractor();
         Rider thisRider = new Farmer();
-        johnDeere.mountThis(thisRider);
+        johnDeere.addRider(thisRider);
 
-        assertEquals(thisRider, johnDeere.getDriver());
+        assertEquals(thisRider, johnDeere.getRider());
 
-        johnDeere.getOffThis();
+        johnDeere.removeRider();
 
-        assertNull(johnDeere.getDriver());
+        assertNull(johnDeere.getRider());
 
     }
 

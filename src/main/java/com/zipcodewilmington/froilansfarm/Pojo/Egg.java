@@ -1,5 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
 public class Egg  {
-    Boolean hasBeenFertilized;
+    Boolean hasBeenFertilized = false;
 }

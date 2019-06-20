@@ -1,5 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Interfaces;
 
-public interface Edible {
+import com.zipcodewilmington.froilansfarm.Pojo.Storage;
 
+import java.awt.*;
+import java.util.ArrayList;
+
+public interface Edible {
 }

@@ -3,21 +3,11 @@ package com.zipcodewilmington.froilansfarm.Pojo;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class ChickenTest {
     Chicken chicken = new Chicken();
-    Storage<Tomato> tomatoStorage = new Storage<Tomato>();
-
-    @org.junit.Test
-    public void eat() {
-        tomatoStorage.addFood(new Tomato());
-        tomatoStorage.addFood(new Tomato());
-        chicken.eat(tomatoStorage.getFood());
-
-        Integer expected = 1;
-        Integer actual = tomatoStorage.count();
-
-        Assert.assertEquals(expected,actual);
-    }
+    Storage<EdibleEgg>eggStorage = new Storage<EdibleEgg>();
 
 
     @org.junit.Test
@@ -30,8 +20,10 @@ public class ChickenTest {
 
     @org.junit.Test
     public void yields() {
-        Egg actual = new EdibleEgg();
-        Edible expected = chicken.yields();
+        chicken.yields(eggStorage);
+
+        Integer actual = 1;
+        Integer expected = eggStorage.count();
 
         Assert.assertEquals(expected,actual);
     }

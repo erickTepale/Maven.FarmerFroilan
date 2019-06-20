@@ -1,5 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Interfaces;
 
+import com.zipcodewilmington.froilansfarm.Pojo.Storage;
+
+import java.util.List;
+
 public interface Eater {
-    void eat(Edible food);
+    void eat( Storage storage);
 }

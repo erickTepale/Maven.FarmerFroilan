@@ -23,7 +23,7 @@ public class Farmer extends Person implements Botanist {
 
     }
 
-    public void eat(Edible food) {
+    public void eat(Storage storage) {
 
     }
 

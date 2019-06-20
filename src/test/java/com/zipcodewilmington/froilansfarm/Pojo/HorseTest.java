@@ -17,7 +17,7 @@ public class HorseTest {
     public void eat() {
         tomatoStorage.addFood(new Tomato());
         tomatoStorage.addFood(new Tomato());
-        horse.eat(tomatoStorage.getFood());
+        horse.eat(tomatoStorage);
 
         Integer expected = 1;
         Integer actual = tomatoStorage.count();

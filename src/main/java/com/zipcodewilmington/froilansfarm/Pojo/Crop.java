@@ -6,8 +6,6 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 public abstract class Crop implements Produce, Edible {
     Boolean hasBeenHavested;
     Boolean HasBeenFertilized;
-    CornStalk cornStalk;
-    TomatoPlant tomatoPlant;
 
     public Edible yields() {
         return null;

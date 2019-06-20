@@ -10,6 +10,7 @@ public class TomatoPlant extends Crop {
 
     public TomatoPlant(){
         super();
+
         tomatoPlant = new ArrayList<Tomato>();
         addTomato(5);
     }

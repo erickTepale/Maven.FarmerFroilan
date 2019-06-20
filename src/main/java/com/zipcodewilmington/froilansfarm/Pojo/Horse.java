@@ -14,7 +14,7 @@ public class Horse extends Animal implements Rideable {
         return null;
     }
 
-    public void ride(Rider rider) {
+    public void ride() {
 
     }
 }

@@ -5,4 +5,5 @@ import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 abstract class Person implements Eater, NoiseMaker, Rider {
+
 }

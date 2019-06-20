@@ -2,7 +2,9 @@ package com.zipcodewilmington.froilansfarm.Pojo;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,17 +12,27 @@ import static org.junit.Assert.*;
 public class HorseTest {
 
     Horse horse = new Horse();
-    Storage<Tomato> tomatoStorage = new Storage<Tomato>();
+    Storage storage = Storage.getInstance();
+    Tomato tomato = new Tomato();
     Farmer farmer = new Farmer();
+
+    @Before
+    public void before() {
+        storage.resetConainter();
+    }
+    @After
+    public void after() {
+        storage.resetConainter();
+    }
 
     @org.junit.Test
     public void eat() {
-        tomatoStorage.addFood(new Tomato());
-        tomatoStorage.addFood(new Tomato());
-        horse.eat(tomatoStorage);
+        storage.addEdible(new Tomato());
+        storage.addEdible(new Tomato());
+        horse.eat(tomato);
 
         Integer expected = 1;
-        Integer actual = tomatoStorage.count();
+        Integer actual = storage.count(tomato);
 
         Assert.assertEquals(expected,actual);
     }

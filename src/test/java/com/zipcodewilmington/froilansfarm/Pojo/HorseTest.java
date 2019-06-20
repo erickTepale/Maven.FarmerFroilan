@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
+import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,93 +8,31 @@ import static org.junit.Assert.*;
 
 public class HorseTest {
 
-    Stable stable = new Stable();
-    @Test
-    public void addHorseTest() {
-        Horse chicken = new Horse();
-        stable.addHorse(chicken);
+    Horse horse = new Horse();
+    Storage<Tomato> tomatoStorage = new Storage<Tomato>();
 
-        Horse actual = chicken;
-        Horse expected = stable.getHorse(0);
+    @org.junit.Test
+    public void eat() {
+        tomatoStorage.addFood(new Tomato());
+        tomatoStorage.addFood(new Tomato());
+        horse.eat(tomatoStorage.getFood());
 
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void addHorseTest2() {
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-
-
-        Integer actual = 2;
-        Integer expected = stable.horesCount();
-
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void addHorseTest3() {
-        Horse chicken = new Horse();
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-        stable.addHorse(chicken);
-
-        Horse actual = chicken;
-        Horse expected = stable.getHorse(2);
-
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void removeHorseTest() {
-        stable.addHorse(new Horse());
-        stable.removeHorse(stable.getHorse(0));
-
-        Integer actual = 0;
-        Integer expected = stable.horesCount();
-
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void removeHorseTestMultible() {
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-
-        stable.removeHorse(stable.getHorse(0));
-
-        Integer actual = 3;
-        Integer expected = stable.horesCount();
-
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void horesCount(){
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-
-        Integer actual = 4;
-        Integer expected = stable.horesCount();
+        Integer expected = 1;
+        Integer actual = tomatoStorage.count();
 
         Assert.assertEquals(expected,actual);
     }
 
 
-    @Test
-    public void getHorseTest() {
-        Horse chicken = new Horse();
-        stable.addHorse(new Horse());
-        stable.addHorse(new Horse());
-        stable.addHorse(chicken);
-
-        Horse actual = chicken;
-        Horse expected = stable.getHorse(2);
+    @org.junit.Test
+    public void makenoise() {
+        String actual = "neigh";
+        String expected = horse.makenoise();
 
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void ride() {
     }
 }

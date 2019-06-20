@@ -15,8 +15,6 @@ public class Horse extends Animal implements Rideable {
         this.hasRider = false;
         this.rider = null;
     }
-    public void eat(Edible edible) {
-    }
 
     public String makenoise() {
         return "Neigh";

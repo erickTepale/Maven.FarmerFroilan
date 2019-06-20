@@ -26,7 +26,8 @@ public abstract class Crop implements Produce, Edible {
         return hasBeenHavested;
     };
 
-    public void setHasBeenFertilized(Boolean hasBeenFertilized){
+    public void setHasBeenFertilized(Boolean hasBeenFertilized) {
         this.hasBeenFertilized = hasBeenFertilized;
+
     }
 }

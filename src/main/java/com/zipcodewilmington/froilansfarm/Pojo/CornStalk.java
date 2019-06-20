@@ -1,7 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,3 +52,5 @@ public class CornStalk extends Crop {
         super.setHasBeenFertilized(hasBeenFertilized);
     }
 }
+
+

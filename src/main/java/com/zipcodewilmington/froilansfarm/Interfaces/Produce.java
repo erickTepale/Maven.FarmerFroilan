@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Pojo.Storage;
 
 import java.util.List;
 
-public interface Produce  {
+public interface Produce {
      Edible yields(Storage storage);
+
 }

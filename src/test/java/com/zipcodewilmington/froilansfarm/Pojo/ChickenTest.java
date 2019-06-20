@@ -1,16 +1,28 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.List;
 
 public class ChickenTest {
     Chicken chicken = new Chicken();
-    Storage<EdibleEgg>eggStorage = new Storage<EdibleEgg>();
+    Storage storage = Storage.getInstance();
+    Tomato tomato = new Tomato();
 
+    @Before
+        public void before() {
+        storage.resetConainter();
+    }
+    @After
+        public void after() {
+        storage.resetConainter();
+    }
 
-    @org.junit.Test
+    @Test
     public void makenoise() {
         String actual = "cluck";
         String expected = chicken.makenoise();
@@ -18,12 +30,12 @@ public class ChickenTest {
         Assert.assertEquals(expected,actual);
     }
 
-    @org.junit.Test
+    @Test
     public void yields() {
-        chicken.yields(eggStorage);
+        chicken.yields(tomato);
 
         Integer actual = 1;
-        Integer expected = eggStorage.count();
+        Integer expected = storage.count(tomato);
 
         Assert.assertEquals(expected,actual);
     }

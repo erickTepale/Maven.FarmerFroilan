@@ -10,7 +10,7 @@ public class CornStalk extends Crop {
 
     public CornStalk(){
         cornStalk = new ArrayList<EarOfCorn>();
-        addEar(8);
+        //addEar(8);
     }
 
     public void addEar(Integer amountOfAdds){

@@ -12,11 +12,10 @@ public class Chicken extends Animal implements Produce {
         return "cluck";
     }
 
-    public void yields(Edible edible) {
-        super.storage.addEdible(edible);
-    }
+
 
     public Edible yields(Storage storage) {
-        return null;
+            super.storage.addEdible(new EdibleEgg());
+            return null;
     }
 }

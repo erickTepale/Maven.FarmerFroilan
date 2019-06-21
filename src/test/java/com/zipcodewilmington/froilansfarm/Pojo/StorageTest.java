@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
 public class StorageTest {
     Storage storage = Storage.getInstance();
     Tomato tomato = new Tomato();
+    EarOfCorn earOfCorn = new EarOfCorn();
+    EdibleEgg edibleEgg = new EdibleEgg();
 
     @Before
     public void before() {
@@ -25,11 +27,31 @@ public class StorageTest {
 
 
     @Test
-    public void addFood() {
+    public void addFoodTomato() {
         storage.addEdible(tomato);
 
         Integer expected = 1;
         Integer actual = storage.count(tomato);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void addFoodCorn() {
+        storage.addEdible(earOfCorn);
+
+        Integer expected = 1;
+        Integer actual = storage.count(earOfCorn);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void Egg() {
+        storage.addEdible(edibleEgg);
+
+        Integer expected = 1;
+        Integer actual = storage.count(edibleEgg);
 
         Assert.assertEquals(expected,actual);
     }

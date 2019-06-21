@@ -27,14 +27,22 @@ public class CropDusterTest {
     }
 
     @Test
+    public void engineNoise(){
+        CropDuster dusty = new CropDuster();
+        String expected = "nnneeaoowww";
+
+        assertNotEquals(expected, dusty.engineNoise());
+    }
+
+    @Test
     public void ride() {
         CropDuster dusty = new CropDuster();
 
-        assertFalse(dusty.getMoving());
+        assertFalse(dusty.getIsMoving());
 
         dusty.ride();
 
-        assertTrue(dusty.getMoving());
+        assertTrue(dusty.getIsMoving());
 
 
     }
@@ -48,15 +56,15 @@ public class CropDusterTest {
     public void stopRiding() {
         CropDuster dusty = new CropDuster();
 
-        assertFalse(dusty.getMoving());
+        assertFalse(dusty.getIsMoving());
 
         dusty.ride();
 
-        assertTrue(dusty.getMoving());
+        assertTrue(dusty.getIsMoving());
 
         dusty.stopRiding();
 
-        assertFalse(dusty.getMoving());
+        assertFalse(dusty.getIsMoving());
         }
 
 
@@ -73,7 +81,7 @@ public class CropDusterTest {
     public void getIsOn2() {
         CropDuster dusty = new CropDuster();
 
-        dusty.setIsOn(true);
+        dusty.turnOn();
 
         assertTrue(dusty.getIsOn());
 
@@ -85,11 +93,11 @@ public class CropDusterTest {
     public void setIsOn() {
         CropDuster dusty = new CropDuster();
 
-        dusty.setIsOn(true);
+        dusty.turnOn();
 
         assertTrue(dusty.getIsOn());
 
-        dusty.setIsOn(false);
+        dusty.turnOff();
 
         assertFalse(dusty.getIsOn());
     }
@@ -100,15 +108,15 @@ public class CropDusterTest {
     public void getHasPilot() {
         CropDuster dusty = new CropDuster();
 
-        assertFalse(dusty.getHasPilot());
+        assertFalse(dusty.getHasRider());
 
-        dusty.setHasPilot(true);
+        dusty.mountVehicle();
 
-        assertTrue(dusty.getHasPilot());
+        assertTrue(dusty.getHasRider());
 
-        dusty.setHasPilot(false);
+        dusty.dismountVehicle();
 
-        assertFalse(dusty.getHasPilot());
+        assertFalse(dusty.getHasRider());
 
     }
 
@@ -116,39 +124,39 @@ public class CropDusterTest {
     public void setHasPilot() {
         CropDuster dusty = new CropDuster();
 
-        assertFalse(dusty.getHasPilot());
+        assertFalse(dusty.getHasRider());
 
-        dusty.setHasPilot(true);
+        dusty.mountVehicle();
 
-        assertTrue(dusty.getHasPilot());
+        assertTrue(dusty.getHasRider());
 
-        dusty.setHasPilot(false);
+        dusty.dismountVehicle();
 
-        assertFalse(dusty.getHasPilot());
+        assertFalse(dusty.getHasRider());
     }
 
     @Test
     public void getMoving() {
         CropDuster dusty = new CropDuster();
 
-        assertFalse(dusty.getMoving());
+        assertFalse(dusty.getIsMoving());
 
         dusty.ride();
 
-        assertTrue(dusty.getMoving());
+        assertTrue(dusty.getIsMoving());
 
         dusty.stopRiding();
 
-        assertFalse(dusty.getMoving());
+        assertFalse(dusty.getIsMoving());
 
     }
 
     @Test
     public void getPilot() {
         CropDuster dusty = new CropDuster();
-        Pilot testPilot = new Pilot();
 
-        assertNull(dusty.getPilot());
+
+        assertNull(dusty.getRider());
 
     }
 
@@ -157,9 +165,9 @@ public class CropDusterTest {
         CropDuster dusty = new CropDuster();
         Pilot testPilot = new Pilot();
 
-        dusty.setPilot(testPilot);
+        dusty.addRider(testPilot);
 
-        assertEquals(testPilot, dusty.getPilot());
+        assertEquals(testPilot, dusty.getRider());
 
     }
 
@@ -168,13 +176,13 @@ public class CropDusterTest {
         CropDuster dusty = new CropDuster();
         Pilot testPilot = new Pilot();
 
-        dusty.setPilot(testPilot);
+        dusty.addRider(testPilot);
 
-        assertEquals(testPilot, dusty.getPilot());
+        assertEquals(testPilot, dusty.getRider());
 
-        dusty.setPilot(null);
+        dusty.addRider(null);
 
-        assertNull(dusty.getPilot());
+        assertNull(dusty.getRider());
 
     }
 

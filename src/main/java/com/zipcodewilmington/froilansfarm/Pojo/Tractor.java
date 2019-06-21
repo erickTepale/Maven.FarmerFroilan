@@ -4,67 +4,38 @@ import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 public class Tractor extends Vehicle implements FarmVehicle {
-    Boolean isOn;
-    Boolean hasRider;
-    Boolean isMoving;
-    Rider driver;
+    String tractorNoise = "puhVRooPuhHoo puhVROOpuhHOO";
+
+
+
 
     public Tractor(){
-        isOn = false;
-        hasRider = false;
-        isMoving = false;
-        driver = null;
+
     }
 
     public String makenoise() {
 
-        return "puhVRooPuhHoo puhVROOpuhHOO";
+        return tractorNoise;
     }
 
-    public void ride() {
-        isMoving = true;
-    }
-
-    public void stopRiding(){
-        isMoving = false;
-    }
-
-    public Boolean getIsMoving(){
-        return isMoving;
-    }
-
-    public Crop harvest() {
-
-
-        return null;
-    }
-
-    public Boolean getIsOn(){
-        return isOn;
-    }
-
-    public void setIsOn(Boolean onOrOff){
-        isOn = onOrOff;
+    public String engineNoise() {
+        return super.makenoise();
     }
 
 
-    public Boolean getHasRider() {
-        return hasRider;
+    public void harvest(CropRow cropRow) {
+//        if(isOn == true && hasRider == true && isMoving == true){
+//            cropRow.harvest();
+//        }
     }
 
-    public void setHasRider(Boolean hasRider) {
-        this.hasRider = hasRider;
+
+    public void addRider(Rider theRider){
+        rider = theRider;
     }
 
-    public void mountThis(Rider driver){
-        this.driver = driver;
-    }
 
-    public Rider getDriver(){
-        return driver;
-    }
 
-    public void getOffThis(){
-        this.driver = null;
-    }
+
+
 }

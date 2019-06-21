@@ -6,18 +6,13 @@ import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
-    Boolean isOn;
-    Boolean hasPilot;
-    Boolean isMoving;
+    String planeSound = "nnneeaoowww";
     Boolean isFlying;
-    Rider pilot;
 
 
-    public CropDuster(){
-        isOn = false;
-        hasPilot = false;
-        isMoving = false;
-        pilot = null;
+
+
+    public CropDuster() {
         isFlying = false;
     }
 
@@ -27,59 +22,38 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
 
     }
 
-    public void land(){
-        isFlying = false;
-    }
-
-    public Boolean getIsFlying(){
-        return isFlying;
+    public String engineNoise() {
+        return super.makenoise();
     }
 
     public String makenoise() {
 
-        return "nnneeaoowww";
+        return planeSound;
     }
 
-    public void ride() {
-        isMoving = true;
+    public void land() {
+        isFlying = false;
     }
 
-    public void stopRiding(){
-        isMoving = false;
+    public Boolean getIsFlying() {
+        return isFlying;
     }
 
-
-
-    public void fertiilizes(Edible edible){
-        //edible.hasBeemFertilized
+    public void fertiilizes(CropRow cropRow) {
+//        if(isFlying == true && isOn == true && hasRider == true && isMoving == true) {
+//            cropRow.fertilize();
+//        }
     }
 
-    public Boolean getIsOn() {
-        return isOn;
-    }
-
-    public void setIsOn(Boolean on) {
-        isOn = on;
-    }
-
-    public Boolean getHasPilot() {
-        return hasPilot;
-    }
-
-    public void setHasPilot(Boolean hasPilot) {
-        this.hasPilot = hasPilot;
-    }
-
-    public Boolean getMoving() {
-        return isMoving;
+    public void addRider(Pilot theRider){
+        hasRider = true;
+        rider = theRider;
     }
 
 
-    public Rider getPilot() {
-        return pilot;
-    }
 
-    public void setPilot(Pilot pilot) {
-        this.pilot = pilot;
-    }
+
+
+
+
 }

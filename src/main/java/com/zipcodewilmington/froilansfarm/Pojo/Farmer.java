@@ -24,7 +24,7 @@ public class Farmer extends Person implements Botanist {
     }
 
     public void eat(Edible edible) {
-
+        //Storage.getInstance().removeEdible(edible);
     }
 
     public String makenoise() {

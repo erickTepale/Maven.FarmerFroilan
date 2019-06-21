@@ -29,6 +29,10 @@ public class TomatoPlant extends Crop {
 
     @Override
     public Edible yields(Storage storage) {
+        for (int i = 0; i <tomatoPlant.size() ; i++) {
+            storage.addEdible(tomatoPlant.get(i));
+        }
+
         return null;
     }
 

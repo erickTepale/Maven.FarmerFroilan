@@ -23,10 +23,10 @@ public class Tractor extends Vehicle implements FarmVehicle {
     }
 
 
-    public void harvest(CropRow cropRow) {
-//        if(isOn == true && hasRider == true && isMoving == true){
-//            cropRow.harvest();
-//        }
+    public void harvest(Field field) {
+        if (isOn == true && hasRider == true && isMoving == true) {
+            field.harvestField();
+        }
     }
 
 

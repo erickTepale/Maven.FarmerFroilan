@@ -5,12 +5,14 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CornStalk extends Crop {
+public class CornStalk extends Crop { // add harvested methods to crop rows and fields !!
     private List<EarOfCorn> cornStalk;
+    private Boolean hasBeenHarvested;
 
     public CornStalk(){
         cornStalk = new ArrayList<EarOfCorn>();
-        //addEar(8);
+        hasBeenHarvested = false;
+        addEar(8);
     }
 
     public void addEar(Integer amountOfAdds){
@@ -27,9 +29,11 @@ public class CornStalk extends Crop {
 
     @Override
     public Edible yields(Storage storage) {
+        setHasBeenHavested(true);
+        for (int i = 0; i < cornStalk.size() ; i++) {
+            storage.addEdible(cornStalk.get(i));
+        }
        return null;
-       // adds all the corn on the stalk to the container
-        //then clears the array of cornStalk
     }
 
     @Override

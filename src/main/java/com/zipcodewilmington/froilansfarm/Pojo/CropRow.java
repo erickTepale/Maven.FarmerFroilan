@@ -9,7 +9,13 @@ public class CropRow{
 
     public CropRow(){
         isFertilized = false;
-        cropRow = new ArrayList<Crop>();
+        cropRow = new ArrayList<>();
+    }
+
+    public void harvest(){
+        for (Crop each : cropRow) {
+            each.yields(Storage.getInstance());
+        }
     }
 
     public Integer count(){

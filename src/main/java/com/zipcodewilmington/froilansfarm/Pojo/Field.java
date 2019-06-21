@@ -28,7 +28,11 @@ public class Field {
         }
     }
 
-
+    public void harvestField(){
+        for (CropRow each: cropRow) {
+            each.harvest();
+        }
+    }
 
     public List<CropRow> getCropRow() {
         return cropRow;

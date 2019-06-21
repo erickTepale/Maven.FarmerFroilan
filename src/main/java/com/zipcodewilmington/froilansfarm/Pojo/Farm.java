@@ -95,7 +95,6 @@ public class Farm {
 
         coops = new ChickenCoop[]{chickenCoop1, chickenCoop2, chickenCoop3, chickenCoop4};
 
-
     }
 
 

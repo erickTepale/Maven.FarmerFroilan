@@ -95,4 +95,9 @@ public class ChickenCoopTest {
 
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void instance () {
+        assertTrue(chickenCoop instanceof ChickenCoop);
+    }
 }

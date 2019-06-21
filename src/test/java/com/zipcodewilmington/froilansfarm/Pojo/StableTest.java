@@ -96,4 +96,9 @@ public class StableTest {
 
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void instance () {
+        assertTrue(stable instanceof Stable);
+    }
 }

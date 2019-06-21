@@ -130,4 +130,9 @@ public class HorseTest {
 
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void instanceAnimal () {
+        assertTrue(horse instanceof Animal);
+    }
 }

@@ -39,10 +39,10 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
         return isFlying;
     }
 
-    public void fertiilizes(CropRow cropRow) {
-//        if(isFlying == true && isOn == true && hasRider == true && isMoving == true) {
-//            cropRow.fertilize();
-//        }
+    public void fertiilizes(Field field) {
+        if(isFlying == true && isOn == true && hasRider == true && isMoving == true) {
+            field.fertilize();
+        }
     }
 
     public void addRider(Pilot theRider){

@@ -36,6 +36,7 @@ public class Farmer extends Person implements Botanist, Rider {
         cropRow.add(crop);
     }
 
+
     public void mount(Rideable rideable) {
 
 
@@ -43,7 +44,14 @@ public class Farmer extends Person implements Botanist, Rider {
 
     public void dismount(Rideable rideable) {
 
-    }
+    //public void mount(Rideable rideable) {
+    //    .mount();
+    //}
+
+
+    //public void dismount(Rideable rideable) {
+       // rideable.dismount();
+    //}
 
     public void operate(Rideable rideable) {
 

@@ -10,11 +10,11 @@ public class Pilot extends Person implements Rider {
 
 
     public void mount(Rideable rideable) {
-
+        rideable.mount();
     }
 
     public void dismount(Rideable rideable) {
-
+        rideable.dismount();
     }
 
     public void operate(Rideable rideable) {

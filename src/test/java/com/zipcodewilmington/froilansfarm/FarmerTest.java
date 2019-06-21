@@ -19,7 +19,7 @@ public class FarmerTest {
 
 
         // Farmer plants crop
-        farmer.plant(crop);
+        /*farmer.plant(crop);
         farmer.plant(crop1);
 
 
@@ -70,6 +70,8 @@ public class FarmerTest {
         Farmer farmer = new Farmer();
 
 
+
+    }*/
 
     }
 }

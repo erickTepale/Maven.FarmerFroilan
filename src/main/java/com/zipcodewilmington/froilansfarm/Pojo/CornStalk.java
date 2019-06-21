@@ -36,6 +36,10 @@ public class CornStalk extends Crop { // add harvested methods to crop rows and 
        return null;
     }
 
+    public Integer count(){
+       return cornStalk.size();
+    }
+
     @Override
     public Boolean getHasBeenHavested() {
         return super.getHasBeenHavested();

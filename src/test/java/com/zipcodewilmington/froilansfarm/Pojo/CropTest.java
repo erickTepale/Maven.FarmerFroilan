@@ -85,4 +85,37 @@ public class CropTest {
 
         Assert.assertEquals(Integer.valueOf(5), size);
     }
+
+    // Test Cornstalksss
+    @Test
+    public void testHasBeenHarvestedCorn(){
+        CornStalk cornstalk = new CornStalk();
+
+        Assert.assertFalse(cornstalk.getHasBeenHavested());
+    }
+
+    @Test
+    public void testIsFertilizedCorn(){
+        CornStalk cornstalk = new CornStalk();
+
+        Assert.assertFalse(cornstalk.getHasBeenFertilized());
+    }
+
+    @Test
+    public void TestClearStalkCorn(){
+        CornStalk cornstalk = new CornStalk();
+        cornstalk.clearStalk();
+
+        Assert.assertEquals(Integer.valueOf(0), cornstalk.count());
+    }
+
+    @Test
+    public void testYieldsCorn(){
+        CornStalk cornstalk = new CornStalk();
+        cornstalk.yields(Storage.getInstance());
+
+        Integer size = Storage.getInstance().count(new EarOfCorn());
+
+        Assert.assertEquals(Integer.valueOf(8), size);
+    }
 }

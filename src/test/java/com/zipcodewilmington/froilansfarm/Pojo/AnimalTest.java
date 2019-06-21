@@ -9,6 +9,9 @@ import static org.junit.Assert.*;
 
 public class AnimalTest {
     Storage tomatoStorage = Storage.getInstance();
+    Tomato tomato = new Tomato();
+    EarOfCorn earOfCorn = new EarOfCorn();
+    EdibleEgg edibleEgg = new EdibleEgg();
     @Before
     public void before() {
         tomatoStorage.resetConainter();
@@ -19,9 +22,9 @@ public class AnimalTest {
     }
 
 
-    @org.junit.Test
+    @Test
     public void eat() {
-        Tomato tomato = new Tomato();
+
         Chicken chicken = new Chicken();
 
         tomatoStorage.addEdible(new Tomato());
@@ -30,6 +33,32 @@ public class AnimalTest {
 
         Integer expected = 1;
         Integer actual = tomatoStorage.count(tomato);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    public void eat2() {
+        Chicken chicken = new Chicken();
+
+        tomatoStorage.addEdible(new EarOfCorn());
+        tomatoStorage.addEdible(new EarOfCorn());
+        chicken.eat(earOfCorn);
+
+        Integer expected = 1;
+        Integer actual = tomatoStorage.count(earOfCorn);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    public void eat3() {
+        Chicken chicken = new Chicken();
+
+        tomatoStorage.addEdible(new EdibleEgg());
+        tomatoStorage.addEdible(new EdibleEgg());
+        chicken.eat(tomato);
+
+        Integer expected = 1;
+        Integer actual = tomatoStorage.count(edibleEgg);
 
         Assert.assertEquals(expected,actual);
     }

@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface Produce {
      Edible yields(Storage storage);
-
 }

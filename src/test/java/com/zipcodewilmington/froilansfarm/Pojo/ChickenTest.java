@@ -11,7 +11,8 @@ import java.util.List;
 public class ChickenTest {
     Chicken chicken = new Chicken();
     Storage storage = Storage.getInstance();
-    Tomato tomato = new Tomato();
+    EdibleEgg edibleEgg = new EdibleEgg();
+
 
     @Before
         public void before() {
@@ -19,7 +20,7 @@ public class ChickenTest {
     }
     @After
         public void after() {
-        storage.resetConainter();
+//        storage.resetConainter();
     }
 
     @Test
@@ -32,10 +33,10 @@ public class ChickenTest {
 
     @Test
     public void yields() {
-        chicken.yields(tomato);
+        chicken.yields(storage);
 
-        Integer actual = 1;
-        Integer expected = storage.count(tomato);
+        Integer actual = storage.count(edibleEgg);;
+        Integer expected = 1;
 
         Assert.assertEquals(expected,actual);
     }

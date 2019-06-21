@@ -20,10 +20,6 @@ public class StorageTest {
     public void before() {
         storage.resetConainter();
     }
-    @After
-    public void after() {
-        storage.resetConainter();
-    }
 
 
     @Test
@@ -76,7 +72,5 @@ public class StorageTest {
         Integer actual = storage.count(tomato);
 
         Assert.assertEquals(expected,actual);
-
     }
-
 }

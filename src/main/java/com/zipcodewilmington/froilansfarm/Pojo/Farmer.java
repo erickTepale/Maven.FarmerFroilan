@@ -5,7 +5,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
-<<<<<<< HEAD
+
 public class Farmer extends Person implements Botanist {
 
     public void plant(Crop crop) {
@@ -13,8 +13,6 @@ public class Farmer extends Person implements Botanist {
     }
 
     public void mount(Rideable rideable) {
-=======
-import java.util.List;
 
 public class Farmer extends Person implements Botanist, Rider {
     private Farm farm;
@@ -40,7 +38,6 @@ public class Farmer extends Person implements Botanist, Rider {
 
     public void mount(Rideable rideable) {
 
->>>>>>> Implementation Updates
 
     }
 
@@ -49,15 +46,26 @@ public class Farmer extends Person implements Botanist, Rider {
     }
 
     public void operate(Rideable rideable) {
-<<<<<<< HEAD
 
+
+        rideable.ride();
     }
 
-    public void eat(Edible edible) {
-        //Storage.getInstance().removeEdible(edible);
-=======
+    public void rideAllHorses() {
+        for (Stable stable : farm.stable) {
+            for (Horse horse : stable.stable){
+                mount(horse);
+                operate(horse);
+                dismount(horse);
+            }
+        }
+    }
+    public void harvestAllCropRows() {
+        Tractor rideable = farm.tractor;
+        for(CropRow cropRow : farm.field.getCropRow()) {
+            rideable.harvest(cropRow);
+        }
 
->>>>>>> Implementation Updates
     }
 
     public String makenoise() {

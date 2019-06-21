@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
+import java.lang.reflect.Array;
+
 public class Farm {
    private Farm INSTANCE;
    private Tractor tractor;
@@ -9,7 +11,7 @@ public class Farm {
    private CropDuster cropDuster;
 
     private Farm(){
-        Field field = new Field();
+        field = new Field();
 
         CropRow row1 = new CropRow();
         CropRow row2 = new CropRow();
@@ -23,14 +25,8 @@ public class Farm {
         field.addRow(row4);
         field.addRow(row5);
 
-        Tractor kubota = new Tractor();
-        CropDuster dusty = new CropDuster();
-
-        Garage garage = new Garage();
-
-        garage.add(kubota);
-        garage.add(dusty);
-
+        tractor = new Tractor();
+        cropDuster = new CropDuster();
 
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
@@ -57,6 +53,8 @@ public class Farm {
         stable3.addHorse(horse8);
         stable3.addHorse(horse9);
         stable3.addHorse(horse10);
+
+        stables = new Stable[]{stable1, stable2, stable3};
 
         ChickenCoop chickenCoop1 = new ChickenCoop();
         ChickenCoop chickenCoop2 = new ChickenCoop();
@@ -94,6 +92,8 @@ public class Farm {
         chickenCoop4.addChicken(chicken13);
         chickenCoop4.addChicken(chicken14);
         chickenCoop4.addChicken(chicken15);
+
+        coops = new ChickenCoop[]{chickenCoop1, chickenCoop2, chickenCoop3, chickenCoop4};
 
 
     }

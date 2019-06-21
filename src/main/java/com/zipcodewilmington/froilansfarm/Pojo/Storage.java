@@ -19,7 +19,7 @@ public class Storage {
         }
 
         private Storage(){
-            this.conatiner = new HashMap<String, Integer>();
+            this.conatiner = new HashMap<>();
             this.conatiner.put("egg", 0);
             this.conatiner.put("corn", 0);
             this.conatiner.put("tomato", 0);

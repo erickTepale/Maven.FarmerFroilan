@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.Pojo;
 import java.lang.reflect.Array;
 
 public class Farm {
-   private Farm INSTANCE;
+   private static Farm INSTANCE;
    private Tractor tractor;
    private Field field;
    private Stable[] stables;
@@ -98,7 +98,7 @@ public class Farm {
     }
 
 
-    public Farm getINSTANCE(){
+    public static Farm getINSTANCE(){
         if(INSTANCE == null){
             INSTANCE = new Farm();
         }

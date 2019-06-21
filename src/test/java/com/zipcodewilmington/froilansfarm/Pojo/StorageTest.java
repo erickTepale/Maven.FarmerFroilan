@@ -22,8 +22,6 @@ public class StorageTest {
     }
 
 
-
-
     @Test
     public void addFoodTomato() {
         storage.addEdible(tomato);
@@ -74,7 +72,5 @@ public class StorageTest {
         Integer actual = storage.count(tomato);
 
         Assert.assertEquals(expected,actual);
-
     }
-
 }

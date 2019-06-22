@@ -29,7 +29,7 @@ public class HorseTest {
     public void eat() {
         storage.addEdible(new Tomato());
         storage.addEdible(new Tomato());
-        horse.eat(tomato);
+        horse.eat(tomato,1);
 
         Integer expected = 1;
         Integer actual = storage.count(tomato);

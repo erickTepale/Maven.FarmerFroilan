@@ -8,6 +8,8 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 public class ChickenTest {
     Chicken chicken = new Chicken();
     Storage storage = Storage.getInstance();
@@ -17,10 +19,6 @@ public class ChickenTest {
     @Before
         public void before() {
         storage.resetConainter();
-    }
-    @After
-        public void after() {
-//        storage.resetConainter();
     }
 
     @Test
@@ -39,5 +37,23 @@ public class ChickenTest {
         Integer expected = 1;
 
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void yields2() {
+        chicken.yields(storage);
+        chicken.yields(storage);
+        chicken.yields(storage);
+
+        Integer actual = storage.count(edibleEgg);;
+        Integer expected = 3;
+
+        Assert.assertEquals(expected,actual);
+    }
+
+
+    @Test
+    public void instanceAnimal () {
+        assertTrue(chicken instanceof Animal);
     }
 }

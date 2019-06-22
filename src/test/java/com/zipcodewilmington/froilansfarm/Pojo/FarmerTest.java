@@ -78,7 +78,7 @@ public class FarmerTest {
     public void eatTest() {
         Farmer farmer = new Farmer();
         Edible food = new Tomato();
-        farmer.eat(food);
+        farmer.eat(food, 1);
         Assert.assertEquals(1,farmer.getStomach().size());
     }
 }

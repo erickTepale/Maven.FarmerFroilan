@@ -10,6 +10,7 @@ import java.util.List;
 
 abstract class Person implements Eater, NoiseMaker {
 
+    Storage storage = Storage.getInstance();
     private List<Edible> stomach;
 
     public Person() {
@@ -25,9 +26,10 @@ abstract class Person implements Eater, NoiseMaker {
     }
 
 
-    public void eat(Edible food) {
-        stomach.add(food);
-
+    public void eat(Edible edible , Integer integer) {
+        for (int i = 0; i < integer; i++) {
+            storage.removeEdible(edible);
+            stomach.add(edible);
+        }
     }
-
 }

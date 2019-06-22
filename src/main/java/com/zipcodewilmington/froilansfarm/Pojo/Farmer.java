@@ -56,6 +56,14 @@ public class Farmer extends Person implements Botanist, Rider {
             }
         }
     }
+
+    public void feedAllHorses(Edible edible, Integer integer) {
+        for (Stable stable : farm.getStables()) {
+            for (Horse horse : stable.stable){
+                horse.eat(edible, integer);
+            }
+        }
+    }
     public void harvestAllCropRows() {
         Tractor rideable = farm.getTractor();
         rideable.harvest(farm.getField());

@@ -10,21 +10,21 @@ public class Pilot extends Person implements Rider {
 
 
     public void mount(Rideable rideable) {
-        rideable.mount();
+        ((CropDuster) rideable).addRider(this);
     }
 
     public void dismount(Rideable rideable) {
-        rideable.dismount();
+        ((CropDuster) rideable).land();
     }
 
     public void operate(Rideable rideable) {
         ((CropDuster)rideable).fly();
     }
     public void fertilizeAllCropRows(Farm farm) {
-        Rideable rideable = farm.aircraft;
+        Rideable rideable = farm.getCropDuster();
         mount(rideable);
         operate(rideable);
-        for(CropRow cropRow : farm.field.getCropRow()) {
+        for(CropRow cropRow : farm.getField().getCropRow()) {
             cropRow.fertilize();
         }
         dismount(rideable);

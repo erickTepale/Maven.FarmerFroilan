@@ -1,24 +1,14 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Botanist;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
-import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
+import com.zipcodewilmington.froilansfarm.Interfaces.*;
 
-
-public class Farmer extends Person implements Botanist {
-
-    public void plant(Crop crop) {
-
-    }
-
-    public void mount(Rideable rideable) {
+import java.util.List;
 
 public class Farmer extends Person implements Botanist, Rider {
     private Farm farm;
 
     public Farmer() {
-        this.farm = new Farm();
+        this.farm = Farm.getINSTANCE();
     }
     public Farmer(Farm farm) {
         this.farm = farm;
@@ -36,31 +26,29 @@ public class Farmer extends Person implements Botanist, Rider {
         cropRow.add(crop);
     }
 
-
     public void mount(Rideable rideable) {
-
-
+        if (rideable instanceof Vehicle) {
+            ((Vehicle)rideable).mountVehicle();
+        } else if (rideable instanceof Horse) {
+            ((Horse)rideable).mountThis(this);
+        }
     }
 
     public void dismount(Rideable rideable) {
+        if(rideable instanceof Vehicle) {
+            ((Vehicle)rideable).dismountVehicle();
+        } else if (rideable instanceof Horse) {
+            ((Horse)rideable).getOffThis();
 
-    //public void mount(Rideable rideable) {
-    //    .mount();
-    //}
-
-
-    //public void dismount(Rideable rideable) {
-       // rideable.dismount();
-    //}
+        }
+    }
 
     public void operate(Rideable rideable) {
-
-
         rideable.ride();
     }
 
     public void rideAllHorses() {
-        for (Stable stable : farm.stable) {
+        for (Stable stable : farm.getStables()) {
             for (Horse horse : stable.stable){
                 mount(horse);
                 operate(horse);
@@ -69,15 +57,12 @@ public class Farmer extends Person implements Botanist, Rider {
         }
     }
     public void harvestAllCropRows() {
-        Tractor rideable = farm.tractor;
-        for(CropRow cropRow : farm.field.getCropRow()) {
-            rideable.harvest(cropRow);
-        }
-
+        Tractor rideable = farm.getTractor();
+        rideable.harvest(farm.getField());
     }
 
     public String makenoise() {
-        return null;
+        return "Farmer shouting!!";
     }
 
 }

@@ -1,29 +1,26 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
-public enum DaysOfTheWeek {
-    SUNDAY(1),
-    MONDAY(2),
-    TUESDAY(3),
-    WEDNESDAY(4),
-    THRUSDAT(5),
-    FRIDAY(6),
-    SATURDAY(7);
+import java.lang.reflect.Method;
 
-    private Integer dayNumber;
-
-
-    DaysOfTheWeek(Integer dayNumber){
-        this.dayNumber = dayNumber;
-    }
+public class DaysOfTheWeek{
 
     Farm farm = Farm.getINSTANCE();
     Storage storage = Storage.getInstance();
     Farmer froilan = new Farmer();
     Pilot froilanda = new Pilot();
 
+    public void week(){
+        sunday();
+        monday();
+        tuesday();
+        wednesday();
+        thrusday();
+        friday();
+        saturday();
 
+    }
 
-    private void everyday() {
+    public void everyday() {
         froilan.rideAllHorses();
         froilan.feedAllHorses(new EarOfCorn() ,1);
         froilan.eat(new EarOfCorn(), 1);
@@ -34,39 +31,45 @@ public enum DaysOfTheWeek {
         froilanda.eat(new EdibleEgg(), 2);
     }
 
-    private void monday() {
-       everyday();
-       froilan.plant(new CornStalk(), farm.getField().getCropRow().get(0)); // need way to plant more than one
-       froilan.plant(new TomatoPlant(), farm.getField().getCropRow().get(0));
-       froilan.plant(new CornStalk(), farm.getField().getCropRow().get(0));
+    public void monday() {
+        everyday();
+        froilan.plant(new CornStalk(), farm.getField().getCropRow().get(0), 5); //
+        froilan.plant(new TomatoPlant(), farm.getField().getCropRow().get(0), 5);
+        froilan.plant(new CornStalk(), farm.getField().getCropRow().get(0),5);
     }
 
-    private void tuesday() {
+    public void tuesday() {
         everyday();
         froilanda.operate(farm.getCropDuster());
         farm.getCropDuster().fertiilizes(farm.getField());
     }
 
-    private void wednesday() {
+    public void wednesday() {
         everyday();
         froilan.operate(farm.getTractor());
         farm.getTractor().harvest(farm.getField());
     }
 
-    private void thrusday() {
+    public void thrusday() {
+        everyday();
+        froilan.makenoise();
+
+    }
+
+    public void friday() {
         everyday();
     }
 
-    private void friday() {
+    public void saturday() {
         everyday();
     }
 
-    private void saturday() {
-        everyday();
-    }
-
-    private void sunday() {
+    public void sunday() {
         everyday();
     }
 }
+
+
+
+
 

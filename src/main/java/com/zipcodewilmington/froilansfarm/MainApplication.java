@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.zipcodewilmington.froilansfarm.Pojo.DaysOfTheWeek;
 import com.zipcodewilmington.froilansfarm.Pojo.EarOfCorn;
 
 /**
@@ -7,7 +8,8 @@ import com.zipcodewilmington.froilansfarm.Pojo.EarOfCorn;
  */
 public class MainApplication {
     public static void main(String[] args) {
-        EarOfCorn a = new EarOfCorn();
+      DaysOfTheWeek daysOfTheWeek = new DaysOfTheWeek();
+      daysOfTheWeek.week();
     }
 
 }

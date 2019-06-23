@@ -22,8 +22,11 @@ public class Farmer extends Person implements Botanist, Rider {
         this.farm = farm;
     }
 
-    public void plant(Crop crop, CropRow cropRow) {
-        cropRow.add(crop);
+    public void plant(Crop crop, CropRow cropRow, Integer integer) {
+        for (int i = 0; i < integer ; i++) {
+            cropRow.add(crop);
+        }
+
     }
 
     public void mount(Rideable rideable) {

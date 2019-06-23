@@ -6,11 +6,8 @@ import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
-    String planeSound = "nnneeaoowww";
+    String planeSound = "\nnnneeaoowww";
     Boolean isFlying;
-
-
-
 
     public CropDuster() {
         isFlying = false;
@@ -27,7 +24,6 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
     }
 
     public String makenoise() {
-
         return planeSound;
     }
 
@@ -50,10 +46,13 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
         rider = theRider;
     }
 
+    @Override
+    public String toString() {
+        return "Crop Duster";
+    }
 
-
-
-
-
-
+    @Override
+    public void makeNoiseIT() {
+        System.out.println(makenoise());
+    }
 }

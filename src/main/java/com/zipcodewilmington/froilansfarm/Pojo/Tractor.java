@@ -4,17 +4,13 @@ import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 public class Tractor extends Vehicle implements FarmVehicle {
-    String tractorNoise = "puhVRooPuhHoo puhVROOpuhHOO";
-
-
-
+    String tractorNoise = "\npuhVRooPuhHoo puhVROOpuhHOO";
 
     public Tractor(){
 
     }
 
     public String makenoise() {
-
         return tractorNoise;
     }
 
@@ -35,7 +31,13 @@ public class Tractor extends Vehicle implements FarmVehicle {
     }
 
 
+    @Override
+    public String toString() {
+        return "Tractor";
+    }
 
-
-
+    @Override
+    public void makeNoiseIT() {
+        System.out.println(makenoise());
+    }
 }

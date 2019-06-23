@@ -17,11 +17,16 @@ public class Horse extends Animal implements Rideable {
     }
 
     public String makenoise() {
-        return "Neigh";
+        return "\nNeigh";
     }
 
     public void ride() {
         this.isMoving = true;
+    }
+
+    @Override
+    public void makeNoiseIT() {
+        System.out.println(makenoise());
     }
 
     public void stopRiding(){
@@ -51,5 +56,17 @@ public class Horse extends Animal implements Rideable {
 
     public void getOffThis(){
         this.rider = null;
+    }
+
+    @Override
+    public void eat(Edible edible, Integer integer) {
+        super.eat(edible, integer);
+        System.out.println("\nHorse Ate: " + edible);
+    }
+
+    @Override
+    public String toString() {
+        return "Horse";
+
     }
 }

@@ -18,7 +18,7 @@ public class FarmerTest {
         Farmer farmer = new Farmer();
       Crop crop = new TomatoPlant();
       CropRow cropRow = new CropRow();
-        farmer.plant(crop,cropRow);
+        farmer.plant(crop,cropRow,1);
         Integer actual = cropRow.count();
         Assert.assertEquals(1,actual.intValue());
 

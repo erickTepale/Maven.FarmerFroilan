@@ -10,7 +10,10 @@ public class FarmHouseTest {
     private FarmHouse farmhouse;
     @Before
     public void before(){
+
         farmhouse = FarmHouse.getInstance();
+        Storage a = Storage.getInstance();
+        a.resetConainter();
     }
 
     @Test
@@ -47,16 +50,67 @@ public class FarmHouseTest {
     }
 
     ///// field tests
+    @Test
+    public void testAddRowField(){
+        Field field = new Field();
+        field.addRow(new CropRow());
+
+        Assert.assertEquals(1, field.getCropRow().size());
+    }
+
 
     @Test
     public void testFieldRemoveRow(){
         Field field = new Field();
-        field.addRow(new CropRow());
-        field.getCropRow().get(0).add(new CornStalk());
+        CropRow a = new CropRow();
+        field.addRow(a);
 
-        field.remove(0);
+        Assert.assertEquals(1, field.getCropRow().size());
+
+        field.remove(a);
 
         Assert.assertEquals(0, field.getCropRow().size());
+    }
+
+    @Test
+    public void testFieldFertilize(){
+        Field field = new Field();
+        field.addRow(new CropRow());
+        field.addRow(new CropRow());
+        field.addRow(new CropRow());
+
+
+
+        for (int i = 0; i < field.getCropRow().size(); i++) {
+            field.getCropRow().get(i).add(new CornStalk());
+        }
+
+        field.fertilize();
+
+        for (int i = 0; i < field.getCropRow().size(); i++) {
+            Assert.assertTrue(field.getCropRow().get(i).getFertilized());
+        }
+
+    }
+
+    @Test
+    public void testFieldHarvest(){
+        Field field = new Field();
+        field.addRow(new CropRow());
+        field.addRow(new CropRow());
+        field.addRow(new CropRow());
+
+
+
+        for (int i = 0; i < field.getCropRow().size(); i++) {
+            field.getCropRow().get(i).add(new CornStalk());
+        }
+
+        field.harvestField();
+
+        Storage a = Storage.getInstance();
+
+        Assert.assertEquals(Integer.valueOf(24), a.count(new CornStalk()));
     }
 
 

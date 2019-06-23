@@ -26,6 +26,7 @@ public class Pilot extends Person implements Rider {
         ((CropDuster)rideable).fly();
         printOperate(rideable);
     }
+
     public void fertilizeAllCropRows(Farm farm) {
         Rideable rideable = farm.getCropDuster();
         mount(rideable);

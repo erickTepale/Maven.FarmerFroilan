@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Pojo;
 
-import java.lang.reflect.Method;
-
 public class DaysOfTheWeek{
 
     Farm farm = Farm.getINSTANCE();
@@ -31,14 +29,14 @@ public class DaysOfTheWeek{
         froilanda.eat(new EdibleEgg(), 2);
     }
 
-    public void monday() {
+    public void sunday() {
         everyday();
         froilan.plant(new CornStalk(), farm.getField().getCropRow().get(0), 5); //
         froilan.plant(new TomatoPlant(), farm.getField().getCropRow().get(1), 5);
         froilan.plant(new CornStalk(), farm.getField().getCropRow().get(2),5);
     }
 
-    public void tuesday() {
+    public void monday() {
         everyday();
         froilanda.mount(farm.getCropDuster());
         froilanda.operate(farm.getCropDuster());
@@ -48,7 +46,7 @@ public class DaysOfTheWeek{
         farm.getCropDuster().land();
     }
 
-    public void wednesday() {
+    public void tuesday() {
         everyday();
         froilan.mount(farm.getTractor());
         froilan.operate(farm.getTractor());
@@ -59,7 +57,7 @@ public class DaysOfTheWeek{
 
     }
 
-    public void thrusday() {
+    public void wednesday() {
         everyday();
         froilan.makenoise();
         froilanda.makenoise();
@@ -72,7 +70,7 @@ public class DaysOfTheWeek{
 
     }
 
-    public void friday() {
+    public void thrusday() {
         everyday();
         froilanda.mount(farm.getCropDuster());
         froilanda.operate(farm.getCropDuster());
@@ -89,7 +87,7 @@ public class DaysOfTheWeek{
         farm.getCoops()[3].getChicken(2).yields(storage);
     }
 
-    public void saturday() {
+    public void friday() {
         everyday();
         farm.getCoops()[0].getChicken(0).yields(storage);
         farm.getCoops()[0].getChicken(1).yields(storage);
@@ -108,7 +106,7 @@ public class DaysOfTheWeek{
 
     }
 
-    public void sunday() {
+    public void saturday() {
         everyday();
         froilan.operate(farm.getTractor());
         farm.getTractor().ride();

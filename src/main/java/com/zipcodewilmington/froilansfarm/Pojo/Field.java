@@ -18,10 +18,6 @@ public class Field {
         this.cropRow.remove(cropRow);
     }
 
-    public void remove(Integer index){
-        this.cropRow.remove(index);
-    }
-
     public void fertilize(){
         for (CropRow each : this.cropRow) {
             each.fertilize();

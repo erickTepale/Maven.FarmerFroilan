@@ -11,6 +11,7 @@ abstract class Animal implements Eater, NoiseMaker {
     public void eat(Edible edible , Integer integer) {
         for (int i = 0; i <integer ; i++) {
             storage.removeEdible(edible);
+
         }
     }
 }

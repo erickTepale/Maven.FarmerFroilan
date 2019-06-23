@@ -30,4 +30,5 @@ public abstract class Crop implements Produce, Edible {
         this.hasBeenFertilized = hasBeenFertilized;
 
     }
+
 }

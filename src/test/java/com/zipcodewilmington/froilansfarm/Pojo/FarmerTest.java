@@ -71,7 +71,7 @@ public class FarmerTest {
         Farmer farmer = new Farmer();
         String actual = farmer.makenoise();
 
-        Assert.assertEquals("Farmer shouting!!",actual);
+        Assert.assertEquals("\nFarmer shouting!!",actual);
     }
 
     @Test

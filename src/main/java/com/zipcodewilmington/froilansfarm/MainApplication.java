@@ -8,7 +8,6 @@ import com.zipcodewilmington.froilansfarm.Pojo.EarOfCorn;
  */
 public class MainApplication {
     public static void main(String[] args) {
-       // DaysOfTheWeek.
     }
 
 }

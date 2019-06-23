@@ -14,6 +14,7 @@ public class Chicken extends Animal implements Produce {
 
     public Edible yields(Storage storage) {
             super.storage.addEdible(new EdibleEgg());
+        System.out.println("Added an Egg to Storage");
             return null;
     }
 }

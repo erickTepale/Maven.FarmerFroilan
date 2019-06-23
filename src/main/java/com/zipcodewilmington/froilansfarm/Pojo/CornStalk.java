@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.Pojo;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import java.awt.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class CornStalk extends Crop { // add harvested methods to crop rows and 
         for (int i = 0; i < cornStalk.size() ; i++) {
             storage.addEdible(cornStalk.get(i));
         }
+        System.out.println("\nAdded " + cornStalk.size()+ " Ears of Corn To Storage");
        return null;
     }
 

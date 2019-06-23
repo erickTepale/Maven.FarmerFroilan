@@ -16,6 +16,7 @@ public class CropRow{
         for (Crop each : cropRow) {
             each.yields(Storage.getInstance());
         }
+        System.out.println("\nCrop Row Harvested");
     }
 
     public Integer count(){
@@ -32,6 +33,7 @@ public class CropRow{
 
     public void fertilize() {
         isFertilized = true;
+        System.out.println("\nCrop Row Fertilized");
     }
 
     public List<Crop> getCropRow() {

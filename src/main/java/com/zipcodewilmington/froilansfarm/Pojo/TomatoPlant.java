@@ -36,7 +36,7 @@ public class TomatoPlant extends Crop {
         for (int i = 0; i <tomatoPlant.size() ; i++) {
             storage.addEdible(tomatoPlant.get(i));
         }
-
+        System.out.println("Added " + tomatoPlant.size() + "'s to Storage");
         return null;
     }
 

@@ -59,4 +59,9 @@ public class TomatoPlant extends Crop {
     public void setHasBeenFertilized(Boolean hasBeenFertilized) {
         super.setHasBeenFertilized(hasBeenFertilized);
     }
+
+    @Override
+    public String toString() {
+        return "Tomato Plant";
+    }
 }

@@ -59,6 +59,11 @@ public class CornStalk extends Crop { // add harvested methods to crop rows and 
     public void setHasBeenFertilized(Boolean hasBeenFertilized) {
         super.setHasBeenFertilized(hasBeenFertilized);
     }
+
+    @Override
+    public String toString() {
+        return "Cornstalk";
+    }
 }
 
 

@@ -11,7 +11,7 @@ public class TractorTest {
     public void makenoise() {
         Tractor johnDeere = new Tractor();
 
-        String expected = "puhVRooPuhHoo puhVROOpuhHOO";
+        String expected = "\npuhVRooPuhHoo puhVROOpuhHOO";
 
         assertEquals(expected, johnDeere.makenoise());
     }

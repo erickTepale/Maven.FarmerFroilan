@@ -10,7 +10,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class HorseTest {
-
     Horse horse = new Horse();
     Storage storage = Storage.getInstance();
     Tomato tomato = new Tomato();
@@ -40,7 +39,7 @@ public class HorseTest {
 
     @org.junit.Test
     public void makenoise() {
-        String actual = "Neigh";
+        String actual = "\nNeigh";
         String expected = horse.makenoise();
 
         Assert.assertEquals(expected,actual);

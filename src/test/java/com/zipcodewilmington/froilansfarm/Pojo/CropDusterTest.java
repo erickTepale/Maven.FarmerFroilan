@@ -21,7 +21,7 @@ public class CropDusterTest {
     @Test
     public void makenoise() {
         CropDuster dusty = new CropDuster();
-        String expected = "nnneeaoowww";
+        String expected = "\nnnneeaoowww";
 
         assertEquals(expected, dusty.makenoise());
     }
@@ -29,7 +29,7 @@ public class CropDusterTest {
     @Test
     public void engineNoise(){
         CropDuster dusty = new CropDuster();
-        String expected = "nnneeaoowww";
+        String expected = "\nnnneeaoowww";
 
         assertNotEquals(expected, dusty.engineNoise());
     }

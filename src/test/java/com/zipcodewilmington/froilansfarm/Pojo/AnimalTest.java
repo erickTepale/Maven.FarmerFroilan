@@ -29,7 +29,7 @@ public class AnimalTest {
 
         tomatoStorage.addEdible(new Tomato());
         tomatoStorage.addEdible(new Tomato());
-        chicken.eat(tomato);
+        chicken.eat(tomato,1);
 
         Integer expected = 1;
         Integer actual = tomatoStorage.count(tomato);
@@ -42,7 +42,7 @@ public class AnimalTest {
 
         tomatoStorage.addEdible(new EarOfCorn());
         tomatoStorage.addEdible(new EarOfCorn());
-        chicken.eat(earOfCorn);
+        chicken.eat(earOfCorn,1);
 
         Integer expected = 1;
         Integer actual = tomatoStorage.count(earOfCorn);
@@ -55,7 +55,7 @@ public class AnimalTest {
 
         tomatoStorage.addEdible(new EdibleEgg());
         tomatoStorage.addEdible(new EdibleEgg());
-        chicken.eat(tomato);
+        chicken.eat(tomato,1);
 
         Integer expected = 1;
         Integer actual = tomatoStorage.count(edibleEgg);

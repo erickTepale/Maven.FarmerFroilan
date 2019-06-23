@@ -46,4 +46,18 @@ public class FarmHouseTest {
         Assert.assertEquals(newPilot, farmhouse.getPerson(newPilot));
     }
 
+    ///// field tests
+
+    @Test
+    public void testFieldRemoveRow(){
+        Field field = new Field();
+        field.addRow(new CropRow());
+        field.getCropRow().get(0).add(new CornStalk());
+
+        field.remove(0);
+
+        Assert.assertEquals(0, field.getCropRow().size());
+    }
+
+
 }

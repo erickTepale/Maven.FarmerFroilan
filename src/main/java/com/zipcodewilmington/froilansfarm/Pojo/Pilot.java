@@ -6,8 +6,11 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 
 public class Pilot extends Person implements Rider {
 
-
-
+    @Override
+    public void eat(Edible edible, Integer integer) {
+        super.eat(edible, integer);
+        System.out.println("Froilanda Ate " + integer + ": " + edible);
+    }
 
     public void mount(Rideable rideable) {
         ((CropDuster) rideable).addRider(this);

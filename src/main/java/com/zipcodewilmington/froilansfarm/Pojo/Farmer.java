@@ -82,7 +82,7 @@ public class Farmer extends Person implements Botanist, Rider {
     @Override
     public void eat(Edible edible, Integer integer) {
         super.eat(edible, integer);
-        System.out.println("Farmer Ate: " + edible);
+        System.out.println("Farmer Ate " + integer + ": " + edible);
     }
 
     public String makenoise() {

@@ -118,4 +118,14 @@ public class CropTest {
 
         Assert.assertEquals(Integer.valueOf(8), size);
     }
+
+    @Test
+    public void testYieldsWatermelon(){
+        WatermelonPlant cornstalk = new WatermelonPlant();
+        cornstalk.yields(Storage.getInstance());
+
+        Integer size = Storage.getInstance().count(new Watermelon());
+
+        Assert.assertEquals(Integer.valueOf(1), size);
+    }
 }

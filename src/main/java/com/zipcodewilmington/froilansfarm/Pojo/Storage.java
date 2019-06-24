@@ -20,6 +20,7 @@ public class Storage {
 
         private Storage(){
             this.conatiner = new HashMap<>();
+            this.conatiner.put("watermelon", 500);
             this.conatiner.put("egg", 500);
             this.conatiner.put("corn", 500);
             this.conatiner.put("tomato", 500);
@@ -50,6 +51,8 @@ public class Storage {
             this.key = "corn";
         } else if (edible instanceof Tomato) {
             this.key ="tomato";
+        }else if (edible instanceof Watermelon) {
+            this.key = "watermelon";
         }
     }
 
@@ -57,5 +60,6 @@ public class Storage {
         conatiner.replace("egg",0);
         conatiner.replace("corn",0);
         conatiner.replace("tomato",0);
+        conatiner.replace("watermelon",0);
     }
 }

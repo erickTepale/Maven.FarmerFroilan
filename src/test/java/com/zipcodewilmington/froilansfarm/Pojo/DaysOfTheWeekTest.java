@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 public class DaysOfTheWeekTest {
     Farm farm = Farm.getINSTANCE();
     Storage storage = Storage.getInstance();
@@ -158,7 +156,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void mondayCropRow0Test() {
-        daysOfTheWeek.monday();
+        daysOfTheWeek.sunday();
 
         Integer expected = 5;
         Integer actual = farm.getField().getCropRow().get(0).count();
@@ -168,7 +166,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void mondayCropRow0FertTest() {
-        daysOfTheWeek.monday();
+        daysOfTheWeek.sunday();
 
         Boolean expected1 = false;
         Boolean actual1 = farm.getField().getCropRow().get(0).getFertilized();
@@ -179,7 +177,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void mondayCropRow1Test() {
-        daysOfTheWeek.monday();
+        daysOfTheWeek.sunday();
 
         Integer expected = 5;
         Integer actual = farm.getField().getCropRow().get(1).count();
@@ -190,7 +188,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void mondayCropRow1FertTest() {
-        daysOfTheWeek.monday();
+        daysOfTheWeek.sunday();
 
         Boolean expected1 = false;
         Boolean actual1 = farm.getField().getCropRow().get(1).getFertilized();
@@ -200,7 +198,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void mondayCropRow2Test() {
-        daysOfTheWeek.monday();
+        daysOfTheWeek.sunday();
 
         Integer expected = 5;
         Integer actual = farm.getField().getCropRow().get(2).count();
@@ -211,7 +209,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void mondayCropRow2FertTest() {
-        daysOfTheWeek.monday();
+        daysOfTheWeek.sunday();
 
         Boolean expected1 = false;
         Boolean actual1 = farm.getField().getCropRow().get(2).getFertilized();
@@ -221,7 +219,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void tuesdaCropRow0FertTesty() {
-        daysOfTheWeek.tuesday();
+        daysOfTheWeek.monday();
         Boolean expected1 = true;
         Boolean actual1 = farm.getField().getCropRow().get(0).getFertilized();
 
@@ -230,7 +228,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void tuesdaCropRow1FertTesty() {
-        daysOfTheWeek.tuesday();
+        daysOfTheWeek.monday();
         Boolean expected1 = true;
         Boolean actual1 = farm.getField().getCropRow().get(1).getFertilized();
 
@@ -239,7 +237,7 @@ public class DaysOfTheWeekTest {
 
     @Test
     public void tuesdaCropRow2FertTesty() {
-        daysOfTheWeek.tuesday();
+        daysOfTheWeek.monday();
         Boolean expected1 = true;
         Boolean actual1 = farm.getField().getCropRow().get(2).getFertilized();
 
@@ -254,7 +252,7 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
         }
-        daysOfTheWeek.wednesday();
+        daysOfTheWeek.tuesday();
 
         Integer actual = storage.count(new Tomato());
         Integer expected = 97;
@@ -270,7 +268,7 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
         }
-        daysOfTheWeek.wednesday();
+        daysOfTheWeek.tuesday();
 
         Integer actual = storage.count(new EarOfCorn());
         Integer expected = 87;
@@ -282,7 +280,7 @@ public class DaysOfTheWeekTest {
     @Test
     public void thrusCropRow5Test() {
         reset();
-        daysOfTheWeek.thrusday();
+        daysOfTheWeek.wednesday();
 
         Integer expected = 5;
         Integer actual = farm.getField().getCropRow().get(4).count();
@@ -294,7 +292,7 @@ public class DaysOfTheWeekTest {
     @Test
     public void thrusCropRow5FertTest() {
         reset();
-        daysOfTheWeek.thrusday();
+        daysOfTheWeek.wednesday();
 
         Boolean expected1 = false;
         Boolean actual1 = farm.getField().getCropRow().get(4).getFertilized();
@@ -305,7 +303,7 @@ public class DaysOfTheWeekTest {
     @Test
     public void thrusCropRow4Test() {
         reset();
-        daysOfTheWeek.thrusday();
+        daysOfTheWeek.wednesday();
 
         Integer expected = 5;
         Integer actual = farm.getField().getCropRow().get(3).count();
@@ -317,7 +315,7 @@ public class DaysOfTheWeekTest {
     @Test
     public void thrusCropRow4FertTest() {
         reset();
-        daysOfTheWeek.thrusday();
+        daysOfTheWeek.wednesday();
 
         Boolean expected1 = false;
         Boolean actual1 = farm.getField().getCropRow().get(3).getFertilized();
@@ -328,7 +326,7 @@ public class DaysOfTheWeekTest {
     @Test
     public void fridayCropRow4FertTesty() {
         reset();
-        daysOfTheWeek.friday();
+        daysOfTheWeek.thrusday();
         Boolean expected1 = true;
         Boolean actual1 = farm.getField().getCropRow().get(3).getFertilized();
 
@@ -338,7 +336,7 @@ public class DaysOfTheWeekTest {
     @Test
     public void fridayCropRow5FertTesty() {
         reset();
-        daysOfTheWeek.friday();
+        daysOfTheWeek.thrusday();
         Boolean expected1 = true;
         Boolean actual1 = farm.getField().getCropRow().get(4).getFertilized();
 
@@ -354,7 +352,7 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
         }
-        daysOfTheWeek.friday();
+        daysOfTheWeek.thrusday();
 
         Integer expected = 100;
         Integer actual = storage.count(new EdibleEgg());
@@ -371,7 +369,7 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
         }
-        daysOfTheWeek.saturday();
+        daysOfTheWeek.friday();
 
         Integer expected = 101;
         Integer actual = storage.count(new EdibleEgg());
@@ -389,7 +387,7 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
         }
-        daysOfTheWeek.saturday();
+        daysOfTheWeek.friday();
 
         Integer expected = 87;
         Integer actual = storage.count(new EarOfCorn());
@@ -407,7 +405,7 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
         }
-        daysOfTheWeek.saturday();
+        daysOfTheWeek.friday();
 
         Integer expected = 97;
         Integer actual = storage.count(new Tomato());

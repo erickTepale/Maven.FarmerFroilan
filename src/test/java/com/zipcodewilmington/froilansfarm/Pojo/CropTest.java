@@ -128,4 +128,26 @@ public class CropTest {
 
         Assert.assertEquals(Integer.valueOf(1), size);
     }
+
+    @Test
+    public void testHasBeenHarvestedWatermelon(){
+        WatermelonPlant cornstalk = new WatermelonPlant();
+
+        Assert.assertFalse(cornstalk.getHasBeenHavested());
+    }
+
+    @Test
+    public void testIsFertilizedWatermelon(){
+        WatermelonPlant cornstalk = new WatermelonPlant();
+
+        Assert.assertFalse(cornstalk.getHasBeenFertilized());
+    }
+
+    @Test
+    public void TestClearStalkWatermelon(){
+        WatermelonPlant cornstalk = new WatermelonPlant();
+        cornstalk.clearStalk();
+
+        Assert.assertEquals(Integer.valueOf(0), cornstalk.count());
+    }
 }

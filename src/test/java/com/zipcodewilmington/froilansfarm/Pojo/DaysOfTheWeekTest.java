@@ -421,8 +421,14 @@ public class DaysOfTheWeekTest {
             storage.addEdible(new EarOfCorn());
             storage.addEdible(new Tomato());
             storage.addEdible(new EdibleEgg());
+            storage.addEdible(new Watermelon());
         }
-        daysOfTheWeek.sunday();
+        daysOfTheWeek.saturday();
+
+        Integer expected = 98;
+        Integer actual = storage.count(new Watermelon());
+
+        Assert.assertEquals(expected,actual);
     }
 
 

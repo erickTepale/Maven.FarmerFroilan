@@ -5,38 +5,39 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TomatoPlant extends Crop {
-    private List<Tomato> tomatoPlant;
 
-    public TomatoPlant(){
+public class WatermelonPlant extends Crop {
+    private List<Watermelon> watermelonPlant;
+
+    public WatermelonPlant(){
         super();
 
-        tomatoPlant = new ArrayList<Tomato>();
-        addTomato(5);
+        watermelonPlant = new ArrayList<Watermelon>();
+        addWaterMelon(1);
     }
 
-    public void addTomato(Integer amountOfAdds){
+    public void addWaterMelon(Integer amountOfAdds){
         if(amountOfAdds > 0) {
             for (int i = 0; i < amountOfAdds; i++) {
-                tomatoPlant.add(new Tomato());
+                watermelonPlant.add(new Watermelon());
             }
         }
     }
 
     public void clearStalk(){
-        tomatoPlant.clear();
+        watermelonPlant.clear();
     }
 
     public Integer count(){
-        return tomatoPlant.size();
+        return watermelonPlant.size();
     }
 
     @Override
     public Edible yields(Storage storage) {
-        for (int i = 0; i <tomatoPlant.size() ; i++) {
-            storage.addEdible(tomatoPlant.get(i));
+        for (int i = 0; i <watermelonPlant.size() ; i++) {
+            storage.addEdible(watermelonPlant.get(i));
         }
-        System.out.println("Added " + tomatoPlant.size() + " Tomato's to Storage");
+        System.out.println("Added " + watermelonPlant.size() + " Watermelons to Storage");
         return null;
     }
 
@@ -62,6 +63,6 @@ public class TomatoPlant extends Crop {
 
     @Override
     public String toString() {
-        return "Tomato Plant";
+        return "Watermelon Plant";
     }
 }

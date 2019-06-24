@@ -13,11 +13,24 @@ public class Farm {
     private Farm(){
         field = new Field();
 
+        //create crop rows
         CropRow row1 = new CropRow();
         CropRow row2 = new CropRow();
         CropRow row3 = new CropRow();
         CropRow row4 = new CropRow();
         CropRow row5 = new CropRow();
+
+        //add crops
+        row1.add(new TomatoPlant());
+        row1.add(new TomatoPlant());
+        row2.add(new CornStalk());
+        row2.add(new CornStalk());
+        row3.add(new WatermelonPlant());
+        row3.add(new WatermelonPlant());
+        row1.add(new TomatoPlant());
+        row1.add(new TomatoPlant());
+        row2.add(new CornStalk());
+        row2.add(new CornStalk());
 
         field.addRow(row1);
         field.addRow(row2);

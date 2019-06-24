@@ -114,6 +114,8 @@ public class DaysOfTheWeek{
         farm.getTractor().ride();
         farm.getTractor().makenoise();
         farm.getTractor().dismountVehicle();
+        froilan.eat(new Watermelon(), 1);
+        froilanda.eat(new Watermelon(), 1);
     }
 }
 
